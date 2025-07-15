@@ -13,7 +13,7 @@ jobs: # 실행한 작업을 정의
         uses: actions/checkout@v3 # 현재github 저장소를 가져온다
         with: # 같이 진행할 작업
           token: ${{ secrets.GITHUB_TOKEN }}
-      - name: python 설정
+      - name: Python 설정
         uses: actions/setup-python@v4
         with:
           python-version: "3.9"
@@ -23,7 +23,7 @@ jobs: # 실행한 작업을 정의
           sudo apt-get update
           sudo apt-get install chromium-browser -y
           sudo apt-get install chromium-chromedriver -y
-          sudo ln -s /usr/lib/chromium-browser/chromedriver /usr/bin/chromedriver
+          # sudo ln -sf /usr/lib/chromium-browser/chromedriver /usr/bin/chromedriver
       - name: 포켓몬 정보 가져오기
         env: 
           DISPLAY: 99
